@@ -35,11 +35,8 @@ function showDiv() {
 
             <h6 style="font-weight: bold;">Annotations, Parameters, Triggers</h5>
               <p>Thoughout the visualization, tooltips and color were used as <em>annotations</em> to represent various <em>parameters</em>(<em>distinct city count, percentage share, cuisine diversity</em>. Also, <em>mouseover, mousein, mouseover</em> have been used as <em>triggers</em> to display the tooltips and changes of the parameters.</p> 
-            <h6 style="font-weight: bold;">Navigation</h6>
-              <p> Sliders on both side of the screen provides easy navigation on either side of the slides.
-             </p>
        </div>
-<input name="answer" value="About the Visualization" onclick="showDiv()" style="border-left-style: solid;margin-left: 500px;" color="steelblue" type="button">
+<input name="answer" value="Get Started" onclick="showDiv()" style="border-left-style: solid;margin-left: 500px;" color="steelblue" type="button">
 </div>
   <div class="mySlides">
     <h2 class="w3-center" style="font-weight: bold; font-size: 20px">Visualization Details</h2>
@@ -76,7 +73,7 @@ function showDiv() {
       <h2 style="margin-left:50px; float:left;">Chart shows fast food restaurants presence in distinct cities in ascending order</h2>       
       <h2 style="margin-left:50px; float:left;">Color: Cusine type                                                              </h2>       
       <h2 style="margin-left:50px; float:left;">Mouse Hover: Additional Details</h2>       
-      <svg id="barChartLegend"></svg> 
+<!--      <svg id="barChartLegend"></svg> -->
         <svg id="barChart"></svg>
       </div>
 
@@ -215,17 +212,79 @@ function showDiv() {
 
         function buildLegend(data){
 
-<!--
-            var color = d3.scale.ordinal()
-                  .domain(['American', 'Mexican', 'Italian'])             
-                  .range(['steelblue','#66cdaa','#cd5c5c'])
+              var margin = {top: 20, right: 30, bottom: 30, left: 40},
+                width = 800 - margin.left - margin.right,
+                height = 200 - margin.top - margin.bottom;
 
-      barChartLegend.selectAll('circle')
-        .data(data)
-        .enter()
-        .append('circle')
-        .attr("fill", function(data){return color(data.cuisine)});
+
+            var minProfit = d3.min(data, function(d){ return d.percentage; });
+            var maxProfit = d3.max(data, function(d){ return d.percentage; });
+
+            // console.log(minProfit);
+            // console.log(maxProfit);
+
+            var color = d3.scale.quantize()
+                  .domain([minProfit, maxProfit])             
+                  .range(['rgb(20,0,32)','rgb(144,165,130)','rgb(186,186,186)']);
+
+              //sort values for color legend
+
+                        var barLegendData=[];
+
+                        data.forEach(function(dv){
+
+                          var val = parseFloat(dv.cuisine)
+
+                          if (val) {barLegendData.push(val);}
+
+                        });
+
+                        barLegendData.sort(function(a,b){ return a-b;});
+
+                        // console.log(barLegendData);
+<!--
+                        var header = d3.select("#barChartLegend")
+                    .attr("width", 200)
+                    .attr("height", 50)                   
+                    .attr("transform", "translate(" + 300 + "," + -180 + ")");
+
+              header.append("text").text("Profit")
+                  .attr({
+                    x: 0,
+                    y: 165,
+                    class: "profitLabel"                  
+                  });
+                        //add color legend
+                        header.selectAll(".barChartLegend")                         
+                          .data(barLegendData)
+                          .enter()
+                          .append("rect")
+                          .attr({
+                x: function(d, i) {return i * (200/barLegendData.length);},
+                  y: height+margin.top,
+                  width: function(d,i){ return (200/barLegendData.length); },
+                  height: 10,
+                  fill: function(d) { return color(d);},                               
+                  class: "barChartLegend"
+                          });
+
 -->
+                          // console.log([barLegendData[0],barLegendData[barLegendData.length-1]]);
+
+                        header.selectAll("text.profitLegend")
+                          .data([barLegendData[0],barLegendData[barLegendData.length-1]])
+                          .enter()
+                          .append("text")
+                          .text(function(d){ return formatSales(d);})
+                          .attr({
+                            x: function(d,i){ return (200-(margin.left/2))*i;},
+                            //y: h-155,            
+                            y: 195,            
+                            "font-size":"12px",
+                            "font-family":"sans-serif",
+                            class: "profitLegend"
+
+                          });
         }
 
         d3.csv("2013-monthly-sales.csv", function(error, data) {
@@ -234,7 +293,7 @@ function showDiv() {
                   console.log(error);
              }  else {
 
-//                buildLegend(data);
+               // buildLegend(data);
                 buildBar(data);                    
              }
               

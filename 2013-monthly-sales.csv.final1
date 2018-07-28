@@ -1,0 +1,25 @@
+name,distinctcity,cuisine,percentage
+McDonald's,1363,American,20.96278068
+Burger King,768,American,11.81175023
+Taco Bell,692,Mexican,10.64287911
+Wendy's,580,American,8.920332205
+Arby's,442,American,6.797908336
+KFC,362,American,5.567517687
+Sonic Drive In,326,American,5.013841895
+SUBWAY,285,American,4.383266687
+Domino's Pizza,281,Italian,4.321747155
+Hardee's,173,American,2.660719779
+Jack In The Box,163,American,2.506920947
+Jimmy John's,142,American,2.183943402
+Chick-Fil-A,130,American,1.999384805
+Bojangles' Famous Chicken 'n Biscuits,109,American,1.676407259
+Pizza Hut,104,Italian,1.599507844
+Five Guys,91,American,1.399569363
+Dairy Queen,83,American,1.276530298
+Carl's Jr,76,American,1.168871117
+Taco John's,71,Mexican,1.091971701
+Whataburger,65,American,0.999692402
+Waffle House,61,American,0.93817287
+Krystal,52,American,0.799753922
+Quiznos,42,American,0.645955091
+Boston Market,41,American,0.630575208

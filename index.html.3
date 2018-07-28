@@ -20,42 +20,45 @@ function showDiv() {
 <!-- <div class="w3-content w3-display-container"> -->
 <div> 
   <div class="mySlides">
-      <div id="welcomeDiv" style="display:none;" class="slide1" style="margin-left: 500px; padding-left: 200px">
+        <div id="welcomeDiv" style="display:none;" class="slide1" style="margin-left: 500px; padding-left: 200px">
           <h2 class="w3-center" style="font-weight: bold; font-size: 20px">About the Project</h2>
 
-          <h2 class="w3-center" style="font-size: 12px">Amitesh Shukla</h2>
+          <h2 class="w3-center" style="font-size: 12px">Ionel Miu</h2>
 
             <h6 style="font-weight: bold;">Structure</h6>
-              <p> The data visualized here is presence of various fast food restaurants across USA, for this visualizatin <em>dashboard</em> structure seems to be the most appropriate way to visualize it; the dashboard provides brief description, and the visualization facilitates free exploration for the users to draw their own conclusions.
+              <p> Giving that data used for this project represents sales history,  <em>dashboard</em> structure(hybrid) seems to be the most suitable way to visualize it; a short description of the viz, followed by the actual visualization for free exploration where user can draw conclusions.
               </p>
 
             <h6 style="font-weight: bold;">Scene Utilization</h6>
-              <p> The presentation has been organized in slideshow format, showcasing one plot per slide for a scene. A slider on both the side of the screen is provided for easy navigation both side of the slide show.  User can go back and forth between the slides on either way. Presentation is divided in <em>scenes</em> that can be viewed left to right, top to bottom. 
+              <p> The presentation could have been organized in slideshow format (having one plot per slide for a scene) but, again, giving the nature of the data, it is more desirable to presented it all on one screen; entire data is available to the user at all times, thus, eliminating the need to memorize it or to switch between slides. Nevertheless, presentation is still divided in <em>scenes</em> that can be viewed left to right, top to bottom. 
               </p>
 
             <h6 style="font-weight: bold;">Annotations, Parameters, Triggers</h5>
-              <p>Thoughout the visualization, tooltips and color were used as <em>annotations</em> to represent various <em>parameters</em>(<em>distinct city count, percentage share, cuisine diversity</em>. Also, <em>mouseover, mousein, mouseover</em> have been used as <em>triggers</em> to display the tooltips and changes of the parameters.</p> 
-            <h6 style="font-weight: bold;">Navigation</h6>
-              <p> Sliders on both side of the screen provides easy navigation on either side of the slides.
-             </p>
-       </div>
-<input name="answer" value="About the Visualization" onclick="showDiv()" style="border-left-style: solid;margin-left: 500px;" color="steelblue" type="button">
+              <p>Thoughout the viz, tooltips and color were used as <em>annotations</em> to represent various <em>parameters</em>(<em>sales, profit and.distinctcity to profit ratio</em>. Also, <em>mouseover, mousein, mouseover</em> have been used as <em>triggers</em> to display the tooltips and changes of the parameters.</p> 
+          </div>
+<div>
+<input type="button" name="answer" value="About the Visualization" onclick="showDiv()" />
 </div>
+
+  </div>
   <div class="mySlides">
-    <h2 class="w3-center" style="font-weight: bold; font-size: 20px">Visualization Details</h2>
+    <h2 class="w3-center" style="font-weight: bold; font-size: 20px">What does this viz represents?</h2>
       <div class="slide2" style="margin-top: 70px;"></div>
-      <p> The visualization presented here represents dashboard showcasing various details about fast food restaurants in the United States. The dataset consists of restaurant: <br>
-      - Name<br>
-      - Address <br>
-      - Cusine served <br>
+      <p> The visualization presented here represents dashboard.distinctcity history of an office supply store over one year time frame. The store sales products that are divided into three main categories: <br>
+      - Furniture (desks, chairs, etc) <br>
+      - Technology (computers, tables, etc) <br>
+      - Office Supplies (paper, binders, etc) <br>
       </p>
       <p>
-      Presence of a particular restaurant in distinct cities(count) is represented by a bar plot. Total number of <em>city presence</em> is represented by the size of the bar with the associated color representing the <em>cuisine</em>.
-      Mouse over activity over a bar provides additional details such as <em> percentage</em>, <em>cuisine</em> etc.</p>
-      <p>Geographical cuisine diversity is displayed as a map plot with color representing the cuisine diversity metrics. The accompaning legend can be used to translate hue to cusine diversity.
+      Monthly sale history is displayed as a bar plot. Sale volume is represented by the size of the bar with the associated color representing the profit.
+      The size of the profit is captured in the associated legend, <em>Profit</em>.</p>
+      <p>Geographical distribution of sales throughout US states is displayed as a map plot with color representing the sales volume. The accompaning legend can be used to translate hue to size.
       </p>
-      <p>Besides size and color, primarily used to 'draw' attention, both, disitnct count and geographical idversity are accompanied by tooltips for finer details.</p>
+      <p>Besides size and color, primarily used to 'draw' attention, both, monthly sales and geographical distribution are accompanied by tooltips for finer details.</p>
 
+      <p>The sale trends of each of the three categories listed above were represented as lines with no axis for a cleaner display.</p>
+
+      <p>Without further ado, let's let the viz speak for data...:)</p>
   </div>
 
 <!--
@@ -70,23 +73,23 @@ function showDiv() {
   <div class="mySlides">
     <!--<h2 class="w3-center">Slideshow 4</h2> -->
       <div class="slide4">
-      <h1 id="dashTitle">Fast Food Restaurants in USA</h1>
+
+
+      <h1 id="dashTitle">US Restaurants by Region</h1>
 
       <div id="topChart" style="float: left; width: 800px;">
-      <h2 style="margin-left:50px; float:left;">Chart shows fast food restaurants presence in distinct cities in ascending order</h2>       
-      <h2 style="margin-left:50px; float:left;">Color: Cusine type                                                              </h2>       
-      <h2 style="margin-left:50px; float:left;">Mouse Hover: Additional Details</h2>       
-      <svg id="barChartLegend"></svg> 
+      <h2 style="margin-left:50px; float:left;">Fast Food Restaurant Presence</h2>       
+      <svg id="barChartLegend"></svg>
         <svg id="barChart"></svg>
       </div>
 
 
-<!--      <div id="bottomLeft" style="float:left; width: 350px; margin-left: 50px;"></div> -->
-<!--
-      <div id="bottomRight" style="float:left; width: 800px;">
-        <h2>Defines different kinds of fast food cuisine generally available in the state</h2>               
+      <div id="bottomLeft" style="float:left; width: 350px; margin-left: 50px;"></div>
+
+      <div id="bottomRight" style="float:left; width: 400px;">
+        <h2>Cuisine Diversity - State</h2>               
       </div>
--->
+
       <!-- global functions -->
       <script>     
       function formatSales(d){
@@ -115,9 +118,9 @@ function showDiv() {
 
           
           var formatRatio = d3.format("%");
-//AMS
-        var margin = {top: 20, right: 30, bottom: 90, left: 40},
-            width = 1000 - margin.left - margin.right,
+
+        var margin = {top: 20, right: 30, bottom: 30, left: 40},
+            width = 800 - margin.left - margin.right,
             height = 400 - margin.top - margin.bottom;
         var x = d3.scale.ordinal()
             .rangeRoundBands([0, width], .1);
@@ -141,17 +144,13 @@ function showDiv() {
 
         // console.log(minProfit);
         // console.log(maxProfit);
-<!--
+
         var color = d3.scale.quantize()
-              //.domain([minProfit, maxProfit])             
-              .domain([0.1, 22])             
+              .domain([minProfit, maxProfit])             
               .range(['rgb(202,0,32)','rgb(204,150,30)','rgb(86,186,186)','rgb(64,64,64)',
-                    'rgb(102,60,232)','rgb(44,65,230)','rgb(200,6,86)','rgb(164,4,4)',
-                    'rgb(210,260,232)','rgb(44,265,230)','rgb(200,226,86)','rgb(164,244,244)']);
--->
-        var color = d3.scale.ordinal()
-                 .domain(['American','Mexican','Italian'])
-                 .range(['steelblue','#66cdaa','#cd5c5c'])
+                    'rgb(102,60,232)','rgb(44,65,230)','rgb(200,6,86)','rgb(164,4,4)']);
+              
+
         var chart = d3.select("#barChart")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
@@ -166,13 +165,6 @@ function showDiv() {
               .attr("class", "x-axis")
               .attr("transform", "translate(0," + height + ")")
               .call(xAxis);
-          chart.selectAll("text")	
-              .style("text-anchor", "start")
-              .attr("dx", ".5em")
-              .attr("dy", ".15em")
-              .attr("transform", function(d) {
-                   return "rotate(90)" 
-               });
           chart.append("g")
               .attr("class", "y-axis")
               .call(yAxis);
@@ -185,7 +177,7 @@ function showDiv() {
           .attr("y", function(d) { return y(d.distinctcity); })
           .attr("height", function(d) { return height - y(d.distinctcity); })
           .attr("width", x.rangeBand())
-          .style("fill", function(d) { return color(d.cuisine); })
+          .style("fill", function(d) { return color(d.percentage); })
           .on("mouseover", function(d) {      
 
                             barTooltip.transition()        
@@ -194,7 +186,7 @@ function showDiv() {
 
                             var tip = "<strong>Name:</strong> " + d.name+ "<br/>";
                             var tip = tip+"<strong>Distinct City Count:</strong> " + d.distinctcity + "<br/>";
-                            var tip = tip+"<strong>Percentage Share:</strong> " + d.percentage+ "%<br/>";
+                            var tip = tip+"<strong>Percentage Share:</strong> " + d.percentage+ "<br/>";
                             var tip = tip+"<strong>Cuisine:</strong> " + d.cuisine+ "<br/>";
 
                             barTooltip.html(tip)  
@@ -215,17 +207,80 @@ function showDiv() {
 
         function buildLegend(data){
 
-<!--
-            var color = d3.scale.ordinal()
-                  .domain(['American', 'Mexican', 'Italian'])             
-                  .range(['steelblue','#66cdaa','#cd5c5c'])
+              var margin = {top: 20, right: 30, bottom: 30, left: 40},
+                width = 800 - margin.left - margin.right,
+                height = 200 - margin.top - margin.bottom;
 
-      barChartLegend.selectAll('circle')
-        .data(data)
-        .enter()
-        .append('circle')
-        .attr("fill", function(data){return color(data.cuisine)});
--->
+
+            var minProfit = d3.min(data, function(d){ return d.percentage; });
+            var maxProfit = d3.max(data, function(d){ return d.percentage; });
+
+            // console.log(minProfit);
+            // console.log(maxProfit);
+
+            var color = d3.scale.quantize()
+                  .domain([minProfit, maxProfit])             
+                  .range(['rgb(20,0,32)','rgb(144,165,130)','rgb(186,186,186)']);
+
+              //sort values for color legend
+
+                        var barLegendData=[];
+
+                        data.forEach(function(dv){
+
+                          var val = parseFloat(dv.cuisine)
+
+                          if (val) {barLegendData.push(val);}
+
+                        });
+
+                        barLegendData.sort(function(a,b){ return a-b;});
+
+                        // console.log(barLegendData);
+
+                        var header = d3.select("#barChartLegend")
+                    .attr("width", 200)
+                    .attr("height", 50)                   
+                    .attr("transform", "translate(" + 300 + "," + -180 + ")");
+
+              header.append("text").text("Profit")
+                  .attr({
+                    x: 0,
+                    y: 165,
+                    class: "profitLabel"                  
+                  });
+
+                        //add color legend
+                        header.selectAll(".barChartLegend")                         
+                          .data(barLegendData)
+                          .enter()
+                          .append("rect")
+                          .attr({
+                x: function(d, i) {return i * (200/barLegendData.length);},
+                  y: height+margin.top,
+                  width: function(d,i){ return (200/barLegendData.length); },
+                  height: 10,
+                  fill: function(d) { return color(d);},                               
+                  class: "barChartLegend"
+                          });
+
+
+                          // console.log([barLegendData[0],barLegendData[barLegendData.length-1]]);
+
+                        header.selectAll("text.profitLegend")
+                          .data([barLegendData[0],barLegendData[barLegendData.length-1]])
+                          .enter()
+                          .append("text")
+                          .text(function(d){ return formatSales(d);})
+                          .attr({
+                            x: function(d,i){ return (200-(margin.left/2))*i;},
+                            //y: h-155,            
+                            y: 195,            
+                            "font-size":"12px",
+                            "font-family":"sans-serif",
+                            class: "profitLegend"
+
+                          });
         }
 
         d3.csv("2013-monthly-sales.csv", function(error, data) {
@@ -234,7 +289,7 @@ function showDiv() {
                   console.log(error);
              }  else {
 
-//                buildLegend(data);
+                buildLegend(data);
                 buildBar(data);                    
              }
               
@@ -305,24 +360,13 @@ function showDiv() {
           });
         </script>
 
-    </div>
-    </div>
-
-
-  <div class="mySlides">
-    <!--<h2 class="w3-center">Slideshow 4</h2> -->
-      <div class="slide8">
-      <h1 id="dashTitle">Cuisine Diversity by State</h1>
-      <div id="bottomRight" style="float:center; width: 1200px;">
-        <h2>Defines different variety of fast food cuisine generally available in a state</h2>               
-      </div>
         <!-- build map -->
         <script>
 
 
         var margin = {top: 20, right: 30, bottom: 30, left: 40},
-            w = 900 - margin.left - margin.right,
-            h = 800 - margin.top - margin.bottom;
+            w = 400 - margin.left - margin.right,
+            h = 400 - margin.top - margin.bottom;
 
                 
                 var projection = d3.geo.albersUsa()
@@ -334,7 +378,7 @@ function showDiv() {
                 .projection(projection);
                                  
                 var color = d3.scale.linear()       
-                 .range(['#ffd8d8','#4d1a00', '#4d1a00', '#4d1a00']);
+              .range(['rgb(229,245,224)','rgb(199,233,192)','rgb(161,217,155)','rgb(116,196,118)','rgb(65,171,93)','rgb(35,139,69)','rgb(0,90,50)']);
 
                                     
 
@@ -349,7 +393,7 @@ function showDiv() {
                 d3.csv("2013-state-sales.csv", function(data) {
 
                     //Set input domain for color scale
-                    color.domain([0,d3.max(data, function(d) { return d.cuisine; })]);
+                    color.domain([0,d3.max(data, function(d) { return d.distinctcity; })]);
 
                     //Load in GeoJSON data
                     d3.json("us.json", function(json) {
@@ -358,7 +402,7 @@ function showDiv() {
                     
                             var dataState = data[i].state;
                             
-                            var dataValue = parseFloat(data[i].cuisine);
+                            var dataValue = parseFloat(data[i].sales);
                     
                             for (var j = 0; j < json.features.length; j++) {
 
@@ -401,7 +445,7 @@ function showDiv() {
                                     .style("opacity", .9);      
 
                                 var tip = "<strong>" + d.properties.NAME + "</strong><br/>"
-                                var tip = tip + "<strong>Cuisine:</strong> " + d.properties.value + "<br/>";
+                                var tip = tip + "<strong>Sales:</strong> $" + formatSales(d.properties.value) + "<br/>";
 
                                 mapTooltip.html(tip)  
                                     .style("left", (d3.event.pageX) + "px")     
@@ -437,11 +481,10 @@ function showDiv() {
                               .append("rect")
                               .attr({
                     x: function(d, i) {return i * (w/legendData.length);},
-                      y: h-150,
-                      //y: 200,
+                      //y: h-140,
+                      y: 210,
                       width: function(d,i){ return (w/legendData.length); },
-                      //width: 100,
-                      height: 15,
+                      height: 10,
                       fill: function(d) { return color(d);}                                  
                               });
 
@@ -452,8 +495,8 @@ function showDiv() {
                               .text(function(d){ return formatSales(d);})
                               .attr({
                                 x: function(d,i){ return (w-(margin.left/2))*i;},
-                                y: h-160,            
-                                //y: 200,            
+                                //y: h-150,            
+                                y: 200,            
                                 "font-size":"12px",
                                 "font-family":"sans-serif"                    
                               });
@@ -461,9 +504,13 @@ function showDiv() {
                     });
                 
                 });
+
+
         </script>
+
     </div>
     </div>
+  </div>
 
   <div class="mySlides">
     <h2 class="w3-center"></h2>
